@@ -16,6 +16,11 @@ app.use(cors());
 // Express middleware to connect to app. (starting path for all the routes in posts.js). 
 app.use('/posts', postRoutes);
 
+// This should be seen when go to actual deployed version:
+app.get('/', (req, res) => {
+  res.send('Greetings from Hello Friend API!')
+})
+
 // Connect server application with database (db will be hosted in MDB cloud) --> https://www.mongodb.com/cloud/atlas
 dotenv.config();
 const CONNECTION_URL = process.env.MONGODB_URI;
